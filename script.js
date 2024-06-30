@@ -166,9 +166,10 @@ function displayResults({ weights, cr }) {
     let result = '<h3>Resultados da Identidade Cooperativa</h3>';
     result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p><ul>';
     weights.forEach((weight, i) => {
-    result += `<li><strong>${principles[i]}</strong>:<br> ${(weight * 100).toFixed(2)}%</li>`;
-});
+        result += `<li><strong>${principles[i]}</strong>:<br>${(weight * 100).toFixed(2)}%</li>`;
+    });
     result += '</ul>';
+    return result; // Retorna o resultado, caso necessário
     result += `<p><strong>Coeficiente de Consistência (CR):</strong> ${cr.toFixed(4)}</p>`;
     if (cr > 0.1) {
         result += '<p style="color:red;"><strong>A matriz de comparação de pares não é consistente. Por favor, revise suas comparações.</strong></p>';
