@@ -163,7 +163,7 @@ function calculateAHP(matrix) {
 }
 
 function displayResults({ weights, cr }) {
-    let result = '<h3>Resultados</h3>';
+    let result = '<h3>Resultados da Identidade Cooperativa</h3>';
     result += '<p><strong>Pesos dos Critérios:</strong></p><ul>';
     weights.forEach((weight, i) => {
         result += `<li><strong>${principles[i]}</strong>: ${weight.toFixed(4)}</li>`;
