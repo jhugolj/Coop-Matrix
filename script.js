@@ -163,7 +163,7 @@ function calculateAHP(matrix) {
 }
 
 function displayResults({ weights, cr }) {
-    let result = '<h3>Resultados da Identidade Cooperativa</h3>';
+    let result = '<h2>Resultados da Identidade Cooperativa</h2>';
     result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p><ul>';
     weights.forEach((weight, i) => {
         result += `<li><strong>${principles[i]}</strong>:<br>${(weight * 100).toFixed(2)}%</li>`;
