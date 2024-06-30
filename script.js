@@ -166,8 +166,8 @@ function displayResults({ weights, cr }) {
     let result = '<h3>Resultados da Identidade Cooperativa</h3>';
     result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p><ul>';
     weights.forEach((weight, i) => {
-        result += `<li><strong>${principles[i]}</strong>: ${weight.toFixed(4)}</li>`;
-    });
+    result += `<li><strong>${principles[i]}</strong>: ${(weight * 100).toFixed(2)}%</li>`;
+});
     result += '</ul>';
     result += `<p><strong>Coeficiente de Consistência (CR):</strong> ${cr.toFixed(4)}</p>`;
     if (cr > 0.1) {
