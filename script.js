@@ -164,10 +164,16 @@ function calculateAHP(matrix) {
 
 function displayResults({ weights, cr }) {
     let result = '<h2>Resultados da Identidade Cooperativa</h2>';
-    result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p><ul>';
+    result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p>';
+    result += '<table>';
+    result += '<thead><tr><th>Princípio</th><th>Valor</th></tr></thead>';
+    result += '<tbody>';
     weights.forEach((weight, i) => {
-        result += `<li><strong>${principles[i]}</strong>:<br>${(weight * 100).toFixed(2)}%</li>`;
+        result += `<tr><td><strong>${principles[i]}</strong></td><td>${(weight * 100).toFixed(2)}%</td></tr>`;
     });
+    result += '</tbody></table>';
+}
+
     result += '</ul>';
     result += `<p><strong>Coeficiente de Consistência (CR):</strong> ${cr.toFixed(4)}</p>`;
     if (cr > 0.1) {
