@@ -161,7 +161,13 @@ function calculateAHP(matrix) {
 
     return { weights, cr };
 }
-
+result += '</ul>';
+    result += `<p><strong>Coeficiente de Consistência (CR):</strong> ${cr.toFixed(4)}</p>`;
+    if (cr > 0.1) {
+        result += '<p style="color:red;"><strong>A matriz de comparação de pares não é consistente. Por favor, revise suas comparações.</strong></p>';
+    }
+    document.getElementById('results').innerHTML = result;
+}
 function displayResults({ weights, cr }) {
     let result = '<h2>Resultados da Identidade Cooperativa</h2>';
     result += '<p><strong>Pesos dos Princípios Organizacionais:</strong></p>';
